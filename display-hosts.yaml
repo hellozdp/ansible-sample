@@ -1,6 +1,6 @@
 ---
 - name: a play that runs entirely on the ansible host
-  hosts: all
+  hosts: localhost
   connection: local
   tasks:
   - name: show hostname
