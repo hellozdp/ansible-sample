@@ -8,8 +8,3 @@
       dest: "/Users/phoenix/Downloads/Other/gphdfs.conf"
       regexp: "(krb_principal_keytab:)([\\s\\S]{0,4}\\S+\\.keytab)"
       replace: "krb_principal_keytab: /Users/phoenix/Downloads/Other/phoenix.keytab"
-
-  - name: show hostname
-    debug:
-      msg: "{{ item }}"
-    with_inventory_hostnames: all   
