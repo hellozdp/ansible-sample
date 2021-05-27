@@ -1,0 +1,15 @@
+---
+- name: a play that runs entirely on the ansible host
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+  - name: replace keytab direction
+    replace:
+      dest: "/Users/phoenix/Downloads/gphdfs.conf"
+      regexp: "(krb_principal_keytab:)([\\s\\S]{0,4}\\S+\\.keytab)"
+      replace: "krb_principal_keytab: /Users/phoenix/Downloads/phoenix.keytab"
+
+  - name: show hostname
+    debug:
+      msg: "{{ item }}"
+    with_inventory_hostnames: all   
